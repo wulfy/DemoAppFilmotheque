@@ -5,7 +5,7 @@ bundle basé sur tuto pour SF2, MAJ pour SF2.5 + utilisation listener et tests
 
 
 config.yml
-===
+---
 ```
  doctrine:
     dbal:
@@ -31,7 +31,7 @@ fos_user:
 ```
 
 parameter.yml
-====
+----
 ```
 parameters:
     database_driver: pdo_sqlite
@@ -52,7 +52,7 @@ parameters:
 ```
 
 kernel.php
-===
+----
 ```php
    public function registerBundles()
     {
@@ -64,7 +64,7 @@ kernel.php
             )};
 ```
 composer.json
-===
+----
  ```
  "require": {
  ...
