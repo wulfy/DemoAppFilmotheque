@@ -1,0 +1,16 @@
+
+{% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
+
+{% block title %}{% if id %} Editer {% else %} Ajouter{% endif %} une catégories {% endblock %}
+
+{% block content %}
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+<form action="" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" />
+</form>
+<p><a href="{{ path('demoapp_categorie_lister') }}">Retour à la liste des catégories</a></p>
+{% endblock %}

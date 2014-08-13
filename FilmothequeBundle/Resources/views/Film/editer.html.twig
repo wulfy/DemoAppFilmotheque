@@ -1,0 +1,16 @@
+
+{% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
+
+{% block title %}{% if id %} Editer {% else %} Ajouter{% endif %} un film{% endblock %}
+
+{% block content %}
+{% if message %}
+<p class="message">{{ message }}</p>
+{% endif %}
+
+<form action="" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+   
+</form>
+<p><a href="{{ path('demoapp_film_lister') }}">Retour à la liste des films</a></p>
+{% endblock %}

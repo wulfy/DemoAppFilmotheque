@@ -1,0 +1,29 @@
+{% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block content %}
+
+<table>
+{% for f in films %}
+	<tr>
+		<td>{{ f.titre }}</td>
+		<td>{{ f.description }}</td>
+		<td>{{ f.categorie.nom }}</td>
+		<td>
+				{% for a in f.acteurs %}
+					{{a.PrenomNom}}
+				{% else %}
+					Aucun acteur n'a été trouvé.
+				{% endfor %}
+		</td>
+		<td><a href="{{ path('demoapp_film_modifier', { 'idFilm': f.id }) }}">Modifier</a></td>
+		<td><a href="{{ path('demoapp_film_supprimer', { 'idFilm': f.id }) }}">Supprimer</a></td>
+	</tr>
+{% else %}
+	<tr><td>Aucun film n'a été trouvé.</td></tr>
+{% endfor %}
+</table>
+
+<p><a href="{{ path('demoapp_film_ajouter') }}">Ajouter un film</a><p>
+{% endblock %}

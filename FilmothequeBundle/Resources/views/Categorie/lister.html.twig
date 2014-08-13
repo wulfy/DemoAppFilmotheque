@@ -1,0 +1,19 @@
+{% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
+
+{% block title %}Liste des catégories{% endblock %}
+
+{% block content %}
+<table>
+{% for c in categories %}
+	<tr>
+		<td>{{ c.nom }}</td>
+		<td><a href="{{ path('demoapp_categorie_modifier', { 'idCategorie': c.id }) }}">Modifier</a></td>
+		<td><a href="{{ path('demoapp_categorie_supprimer', { 'idCategorie': c.id }) }}">Supprimer</a></td>
+	</tr>
+{% else %}
+	<tr><td>Aucune catégorie n'a été trouvée.</td></tr>
+{% endfor %}
+</table>
+
+<p><a href="{{ path('demoapp_categorie_ajouter') }}">Ajouter une catégorie</a><p>
+{% endblock %}

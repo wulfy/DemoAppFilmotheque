@@ -1,0 +1,38 @@
+{% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
+
+{% block title %}{{ "acteur.liste" | trans }}{% endblock %}
+
+{% block content %}
+<p>{{ 'acteur.trouve' | trans({'%nombre%': acteurs|length }) }}</p>
+<form id="form_recherche" action="" method="post">
+	{{ form_widget(rechercheform)}}
+	<input type="submit" value="{{'recherche.rechercher'|trans}}" />
+</form>
+<div class="loading"></div>
+
+<div id="resultats_recherche"> 
+    {% include 'DemoAppFilmothequeBundle:Acteur:liste.html.twig' with {'acteurs' : acteurs}  %}
+</div>
+
+<p><a href="{{ path('demoapp_acteur_ajouter') }}">{{"acteur.ajouter"|trans}}</a><p>
+
+<script>
+$(".loading").hide();
+$("#form_recherche").submit(function(){ 
+    $(".loading").show();
+    var motcle = $("#acteurrecherche_motcle").val();
+    var DATA = 'motcle=' + motcle;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('demoapp_acteur_rechercher')}}",
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#resultats_recherche').html(data);
+           $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>
+{% endblock %}

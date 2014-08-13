@@ -1,0 +1,20 @@
+acteur: Actor 
+acteur.nom: Last name 
+acteur.prenom: First name 
+acteur.dateNaissance: Date of birth 
+acteur.sexe: Gender 
+acteur.liste: Actors list 
+acteur.ajouter: Add an actor
+acteur.trouve: %nombre% actors found
+menu.accueil: Home
+menu.films: Movies
+menu.acteurs: Actors
+menu.categories: Category
+acteur.aucunActeurTrouve: No actor found.
+acteur.Modifier: Edit
+acteur.Supprimer: Delete
+acteur.ajouter: Add an actor
+recherche.motclef: keyword
+recherche.rechercher: search
+acteur.ajouter.succes: Actor %prenom% %nom% sucessfully added !
+acteur.modifier.succes: Actor sucessfully modified !

@@ -1,0 +1,12 @@
+parameters:
+     demo_app_filmotheque.Listener.RequestListener.class: DemoApp\FilmothequeBundle\Listener\RequestListener
+#    demo_app_filmotheque.example.class: DemoApp\FilmothequeBundle\Example
+
+services:
+     kernel.listener.requestListener:
+        class: %demo_app_filmotheque.Listener.RequestListener.class%
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+#    demo_app_filmotheque.example:
+#        class: %demo_app_filmotheque.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

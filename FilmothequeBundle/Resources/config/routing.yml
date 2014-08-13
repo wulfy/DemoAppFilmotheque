@@ -1,0 +1,50 @@
+demoapp_filmotheque_accueil:
+    path:     /
+    defaults: { _controller: DemoAppFilmothequeBundle:Default:index }
+demoapp_acteur_lister:
+  pattern: /acteur/
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:lister }
+demoapp_acteur_ajouter:
+  pattern: /acteur/ajouter
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:editer }
+demoapp_acteur_modifier:
+  pattern: /acteur/modifier/{id}
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:editer }
+demoapp_acteur_supprimer:
+  pattern: /acteur/supprimer/{id}
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
+demoapp_acteur_rechercher:
+  pattern: /acteur/rechercher
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:rechercher }
+  requirements:
+    _method: POST
+demoapp_film_ajouter:
+  pattern: /film/ajouter
+  defaults: { _controller: DemoAppFilmothequeBundle:Film:editer }
+demoapp_film_modifier:
+  pattern: /film/modifier/{idFilm}
+  defaults: { _controller: DemoAppFilmothequeBundle:Film:editer }
+demoapp_film_lister:
+  pattern: /film/
+  defaults: { _controller: DemoAppFilmothequeBundle:Film:lister }
+demoapp_film_supprimer:
+  pattern: /film/supprimer/{idFilm}
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
+demoapp_categorie_ajouter:
+  pattern: /categorie/ajouter
+  defaults: { _controller: DemoAppFilmothequeBundle:Categorie:editer }
+demoapp_categorie_modifier:
+  pattern: /categorie/modifier/{idCategorie}
+  defaults: { _controller: DemoAppFilmothequeBundle:Categorie:editer }
+demoapp_categorie_lister:
+  pattern: /categorie/
+  defaults: { _controller: DemoAppFilmothequeBundle:Categorie:lister }
+demoapp_categorie_supprimer:
+  pattern: /categorie/supprimer/{idCategorie}
+  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
+demoapp_categorie_test:
+  pattern: /categorie/test/
+  defaults: { _controller: DemoAppFilmothequeBundle:Default:test }
+demoapp_choisir_langue:
+  pattern: /choisir_langue/{langue}
+  defaults: { _controller: DemoAppFilmothequeBundle:Default:choisirLangue }

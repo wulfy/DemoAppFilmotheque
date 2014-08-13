@@ -1,0 +1,20 @@
+acteur: Acteur 
+acteur.nom: Nom 
+acteur.prenom: Prénom 
+acteur.dateNaissance: Date de naissance 
+acteur.sexe: Sexe 
+acteur.liste: Liste des acteurs 
+acteur.ajouter: Ajouter un acteur
+acteur.trouve: %nombre% acteurs ont été trouvés
+menu.accueil: Accueil
+menu.films: Films
+menu.acteurs: Acteurs
+menu.categories: Catégorie
+acteur.aucunActeurTrouve: Aucun acteur n'a été trouvé.
+acteur.Modifier: Modifier
+acteur.Supprimer: Supprimer
+acteur.ajouter: Ajouter un acteur
+recherche.motclef: mot-clef
+recherche.rechercher: rechercher
+acteur.ajouter.succes: L'acteur %prenom% %nom% a été ajouté avec succès !
+acteur.modifier.succes: Acteur modifié avec succès !
