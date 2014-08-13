@@ -5,7 +5,7 @@ bundle basé sur tuto pour SF2, MAJ pour SF2.5 + utilisation listener et tests
 
 
 config.yml
-==================
+===
 ```
  doctrine:
     dbal:
@@ -30,8 +30,29 @@ fos_user:
     user_class:   DemoApp\UtilisateurBundle\Entity\Utilisateur
 ```
 
+parameter.yml
+====
+```
+parameters:
+    database_driver: pdo_sqlite
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: filmotheque
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: fr
+    secret: 16b10f9d2e7885152d41ea6175886563a
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true
+```
+
 kernel.php
-==================
+===
 ```php
    public function registerBundles()
     {
@@ -43,7 +64,7 @@ kernel.php
             )};
 ```
 composer.json
-================
+===
  ```
  "require": {
  ...
