@@ -51,6 +51,18 @@ parameters:
     use_assetic_controller: true
 ```
 
+SYMFONY APP:
+====
+
+security.yml
+----
+```
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: sha512
+```
+
 kernel.php
 ----
 ```php
