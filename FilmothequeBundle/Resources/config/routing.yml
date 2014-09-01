@@ -5,13 +5,13 @@ demoapp_acteur_lister:
   pattern: /acteur/
   defaults: { _controller: DemoAppFilmothequeBundle:Acteur:lister }
 demoapp_acteur_ajouter:
-  pattern: /acteur/ajouter
+  pattern: admin/acteur/ajouter
   defaults: { _controller: DemoAppFilmothequeBundle:Acteur:editer }
 demoapp_acteur_modifier:
-  pattern: /acteur/modifier/{id}
+  pattern: admin/acteur/modifier/{id}
   defaults: { _controller: DemoAppFilmothequeBundle:Acteur:editer }
 demoapp_acteur_supprimer:
-  pattern: /acteur/supprimer/{id}
+  pattern: admin/acteur/supprimer/{id}
   defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
 demoapp_acteur_rechercher:
   pattern: /acteur/rechercher
@@ -19,28 +19,28 @@ demoapp_acteur_rechercher:
   requirements:
     _method: POST
 demoapp_film_ajouter:
-  pattern: /film/ajouter
+  pattern: admin/film/ajouter
   defaults: { _controller: DemoAppFilmothequeBundle:Film:editer }
 demoapp_film_modifier:
-  pattern: /film/modifier/{idFilm}
+  pattern: admin/film/modifier/{idFilm}
   defaults: { _controller: DemoAppFilmothequeBundle:Film:editer }
 demoapp_film_lister:
   pattern: /film/
   defaults: { _controller: DemoAppFilmothequeBundle:Film:lister }
 demoapp_film_supprimer:
-  pattern: /film/supprimer/{idFilm}
-  defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
+  pattern: admin/film/supprimer/{idFilm}
+  defaults: { _controller: DemoAppFilmothequeBundle:Film:supprimer }
 demoapp_categorie_ajouter:
-  pattern: /categorie/ajouter
+  pattern: admin/categorie/ajouter
   defaults: { _controller: DemoAppFilmothequeBundle:Categorie:editer }
 demoapp_categorie_modifier:
-  pattern: /categorie/modifier/{idCategorie}
+  pattern: admin/categorie/modifier/{idCategorie}
   defaults: { _controller: DemoAppFilmothequeBundle:Categorie:editer }
 demoapp_categorie_lister:
   pattern: /categorie/
   defaults: { _controller: DemoAppFilmothequeBundle:Categorie:lister }
 demoapp_categorie_supprimer:
-  pattern: /categorie/supprimer/{idCategorie}
+  pattern: admin/categorie/supprimer/{idCategorie}
   defaults: { _controller: DemoAppFilmothequeBundle:Acteur:supprimer }
 demoapp_categorie_test:
   pattern: /categorie/test/
@@ -48,3 +48,23 @@ demoapp_categorie_test:
 demoapp_choisir_langue:
   pattern: /choisir_langue/{langue}
   defaults: { _controller: DemoAppFilmothequeBundle:Default:choisirLangue }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /change-password  

@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use DemoApp\FilmothequeBundle\Entity\Film;
 use DemoApp\FilmothequeBundle\Form\FilmForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class FilmController extends Controller
 {
@@ -38,15 +39,15 @@ class FilmController extends Controller
 		array('films' => $films));
     }
     
-	public function editerAction($id = null)
+	public function editerAction($idFilm = null)
 	{
 	  $message='';
 	  $em = $this->container->get('doctrine')->getManager();
 
-	  if (isset($id)) 
+	  if (isset($idFilm)) 
 		{
 			// modification d'un film existant : on recherche ses données
-			$film = $em->find('DemoAppFilmothequeBundle:Film', $id);
+			$film = $em->find('DemoAppFilmothequeBundle:Film', $idFilm);
 
 			if (!$film)
 			{
@@ -77,26 +78,26 @@ class FilmController extends Controller
 	      {
 	      	$em->persist($film);
 	      	$em->flush();
-	      	(isset($id))?$message='Film modifié avec succès !':$message='Film ajouté avec succès !';
+	      	(isset($idFilm))?$message='Film modifié avec succès !':$message='Film ajouté avec succès !';
 	      }
 	      
 	    }
 	  }
 
 	  return $this->render('DemoAppFilmothequeBundle:Film:editer.html.twig',
-	  array('form' => $form->createView(),'message' => $message,'id'=>$id));
+	  array('form' => $form->createView(),'message' => $message,'id'=>$idFilm));
 	  
 	}
 
-    public function modifierAction($id)
+    public function modifierAction($idFilm)
     {
 	return $this->render('DemoAppFilmothequeBundle:Film:modifier.html.twig');
     }
 
-    public function supprimerAction($id)
+    public function supprimerAction($idFilm)
     {
 		$em = $this->getDoctrine()->getManager();
-	  	$films = $em->find('DemoAppFilmothequeBundle:Film', $id);
+	  	$films = $em->find('DemoAppFilmothequeBundle:Film', $idFilm);
 	        
 	  	if (!$films) 
 	  	{

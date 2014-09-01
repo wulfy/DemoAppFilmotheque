@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use DemoApp\FilmothequeBundle\Entity\Acteur;
 use DemoApp\FilmothequeBundle\Form\ActeurForm;
 use DemoApp\FilmothequeBundle\Form\ActeurRechercheForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ActeurController extends Controller
 {

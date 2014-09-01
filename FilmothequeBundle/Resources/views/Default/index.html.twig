@@ -1,9 +1,17 @@
 {% extends 'DemoAppFilmothequeBundle::layout.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{% trans %}menu.accueil{% endtrans %}{% endblock %}
 
 {% block content %}
 <h3>Top des acteurs les plus jeunes</h3>
 {{ render(controller('DemoAppFilmothequeBundle:Acteur:top', {'max': 3})) }}
+
+<h3>Comptes existants</h3>
+{% for user in users %}
+<li>{{ user.username|e }}</li>
+{% endfor %}
+
 {% endblock %}
+
+
 

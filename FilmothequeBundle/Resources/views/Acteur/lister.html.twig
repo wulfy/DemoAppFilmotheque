@@ -14,7 +14,9 @@
     {% include 'DemoAppFilmothequeBundle:Acteur:liste.html.twig' with {'acteurs' : acteurs}  %}
 </div>
 
+{% if is_granted('ROLE_ADMIN') %}
 <p><a href="{{ path('demoapp_acteur_ajouter') }}">{{"acteur.ajouter"|trans}}</a><p>
+{% endif %}
 
 <script>
 $(".loading").hide();

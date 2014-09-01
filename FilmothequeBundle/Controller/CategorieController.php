@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use DemoApp\FilmothequeBundle\Entity\Categorie;
 use DemoApp\FilmothequeBundle\Form\CategorieForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class CategorieController extends Controller
 {

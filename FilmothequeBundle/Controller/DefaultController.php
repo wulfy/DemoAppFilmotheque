@@ -19,8 +19,11 @@ class DefaultController extends ContainerAware
 			(array_key_exists($categorie->getNom(),$existing_cat))?$em->remove($categorie):$existing_cat[$categorie->getNom()]=$categorie->getNom();
 
 		$em->flush();**/
+		
+		$userManager = $this->container->get('fos_user.user_manager');
+		$users = $userManager->findUsers();
 		return $this->container->get('templating')->renderResponse('DemoAppFilmothequeBundle:Default:index.html.twig',array(
-			'categories' => $categories)
+			'categories' => $categories,'users'=>$users)
 		);
     }
 
