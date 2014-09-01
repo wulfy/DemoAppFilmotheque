@@ -82,7 +82,7 @@ composer.json
  ...
 		"friendsofsymfony/user-bundle": "1.3.4"
 		}
-	```
+```
 	
 DEPENDENCIES:
 ====
